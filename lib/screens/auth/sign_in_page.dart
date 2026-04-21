@@ -1,9 +1,16 @@
+import 'package:finpay_bank/screens/auth/forgot_password_page.dart';
+import 'package:finpay_bank/screens/auth/sign_up_page.dart';
 import 'package:finpay_bank/screens/widgets/sign.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,8 +21,12 @@ class SignInPage extends StatelessWidget {
             padding: const EdgeInsets.only(top: 50, left: 16, right: 16),
             height: MediaQuery.of(context).size.height * 0.22,
             decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
               gradient: LinearGradient(
-                colors: [Color(0xFF4A2FC1), Color(0xFF6A5AE0)],
+                colors: [Color.fromRGBO(54, 41, 183, 1),Color.fromRGBO(54, 41, 183, 1)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -36,14 +47,15 @@ class SignInPage extends StatelessWidget {
             ),
           ),
 
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(
-                color: Color(0xFFF5F5F5),
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
-              ),
-              child: SingleChildScrollView(
+          SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
+                  color: Color(0xFFF5F5F5),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -52,7 +64,7 @@ class SignInPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Color.fromRGBO(54, 41, 183, 1)
                       ),
                     ),
                     const SizedBox(height: 5),
@@ -72,30 +84,49 @@ class SignInPage extends StatelessWidget {
 
                     const SizedBox(height: 30),
 
-                    textField("Text input"),
+                    CustomInput(hint: "Text Input"),
                     const SizedBox(height: 15),
-                    textField("Password", isPassword: true),
+                    CustomInput(
+                      hint: "Password",
+                      keyboardType: TextInputType.emailAddress,
+                    ),
 
                     const SizedBox(height: 10),
 
                     Align(
                       alignment: Alignment.centerRight,
-                      child: Text(
-                        "Forgot your password ?",
-                        style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ForgotPasswordPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Forgot password?",
+                          style: TextStyle(color: Color.fromRGBO(54, 41, 183, 1)),
+                        ),
                       ),
                     ),
 
                     const SizedBox(height: 20),
 
-                    elevatedButton(
-                      text: "Sign In",
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignInPage()),
-                        );
-                      },
+                    Align(
+                      alignment: AlignmentGeometry.center,
+                      child: PrimaryButton(
+                        text: "Sign In",
+                        onPressed: () {},
+                        //  onPressed: () {
+                        //     Navigator.push(
+                        //        context,
+                        //       MaterialPageRoute(
+                        //         builder: (context) => SignUpPage(),
+                        //       ),
+                        //     );
+                        //   },
+                      ),
                     ),
 
                     const SizedBox(height: 25),
@@ -114,13 +145,20 @@ class SignInPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text("Don't have an account? "),
-                        GestureDetector(
-                          onTap: () {},
-                          child: const Text(
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUpPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
                             "Sign Up",
                             style: TextStyle(
-                              color: Colors.deepPurple,
-                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(54, 41, 183, 1),
+                              fontSize: 20,
                             ),
                           ),
                         ),

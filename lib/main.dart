@@ -1,4 +1,5 @@
 import 'package:finpay_bank/screens/auth/sign_in_page.dart';
+import 'package:finpay_bank/screens/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-      home: const SignInPage(),
+      home: const HomePage(),
     );
   }
 }

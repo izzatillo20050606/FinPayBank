@@ -19,14 +19,10 @@ class _SignUpPageState extends State<SignUpPage> {
             padding: const EdgeInsets.only(top: 50, left: 16, right: 16),
             height: MediaQuery.of(context).size.height * 0.22,
             decoration: const BoxDecoration(
+              color: Color.fromRGBO(54, 41, 183, 1),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
-              ),
-              gradient: LinearGradient(
-                colors: [Color.fromRGBO(54, 41, 183, 1),Color.fromRGBO(54, 41, 183, 1)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
               ),
             ),
             child: const Row(
@@ -56,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(54, 41, 183, 1)
+                        color: Color.fromRGBO(54, 41, 183, 1),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -94,15 +90,13 @@ class _SignUpPageState extends State<SignUpPage> {
                           value: isChecked,
                           onChanged: (value) {
                             setState(() {
-                              isChecked = value ?? false;
+                              isChecked = !isChecked;
                             });
                           },
                         ),
-                        Expanded(
-                          child: Text(
-                            "By creating an account you agree to our  Terms and Conditions",
-                            style: TextStyle(color: Colors.black),
-                          ),
+                        Text(
+                          "By creating an account you agree to our  Terms and Conditions",
+                          style: TextStyle(color: Colors.black),
                         ),
                       ],
                     ),
@@ -111,7 +105,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       text: "Sign Up",
                       disabled: !isChecked,
                       onPressed: () {
-                        // Sign up logic here
+                       
                       },
                     ),
                     const SizedBox(height: 30),
@@ -129,7 +123,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           },
                           child: Text(
                             "Sign In",
-                            style: TextStyle(color: Color.fromRGBO(54, 41, 183, 1)),
+                            style: TextStyle(
+                              color: Color.fromRGBO(54, 41, 183, 1),
+                            ),
                           ),
                         ),
                       ],

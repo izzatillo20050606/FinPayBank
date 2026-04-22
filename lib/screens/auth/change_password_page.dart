@@ -14,7 +14,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Change password")),
-      body: Container(
+      body: Padding(
         padding: const EdgeInsets.all(20),
         child: Container(
           height: 350,
@@ -60,28 +60,14 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   keyboardType: TextInputType.visiblePassword,
                 ),
                 Spacer(),
-                ElevatedButton(
+                PrimaryButton(
+                  text: "Send",
                   onPressed: () {
-                   Navigator.push(
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SuccessPage()),
-                    );  
+                      MaterialPageRoute(builder: (context) => SuccessPage()),
+                    );
                   },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 54),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                    backgroundColor: Color.fromRGBO(54, 41, 183, 1),
-                  ),
-                  child: const Text(
-                    "Send ",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
                 SizedBox(height: 16),
               ],

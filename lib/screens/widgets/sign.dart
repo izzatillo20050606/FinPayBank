@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CustomInput extends StatelessWidget {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
   String hint;
   TextInputType? keyboardType = TextInputType.name;
   CustomInput({super.key, required this.hint, this.keyboardType});

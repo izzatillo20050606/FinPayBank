@@ -1,5 +1,4 @@
 import 'package:finpay_bank/screens/auth/change_password_page.dart';
-import 'package:finpay_bank/screens/widgets/sign.dart';
 import 'package:flutter/material.dart';
 
 class Forgot2PasswordPage extends StatelessWidget {

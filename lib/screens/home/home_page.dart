@@ -1,3 +1,8 @@
+import 'package:finpay_bank/screens/auth/change_password_page.dart';
+import 'package:finpay_bank/screens/auth/forgot_password_page.dart';
+import 'package:finpay_bank/screens/auth/sign_in_page.dart';
+import 'package:finpay_bank/screens/auth/sign_up_page.dart';
+import 'package:finpay_bank/screens/home/search_page.dart';
 import 'package:finpay_bank/screens/widgets/battomNavigator.dart';
 import 'package:finpay_bank/screens/widgets/home_widgets.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +16,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int myIndex = 0;
+  final List<Widget> pages = const [
+    ForgotPasswordPage(),
+    ChangePasswordPage(),
+    SignInPage(),
+    SignUpPage(),
+  ];
   List dashItems = [
     HomeWidgetsPage(text: "Account\nand Card,", svgAsset: "assets/icons/1.svg"),
     HomeWidgetsPage(text: "Transfer", svgAsset: "assets/icons/2.svg"),
@@ -28,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -57,10 +68,25 @@ class _HomePageState extends State<HomePage> {
                   Spacer(),
                   Stack(
                     children: [
-                      Icon(Icons.notifications, color: Colors.white, size: 26),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SearchPage(),
+                            ),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                          size: 36,
+                        ),
+                      ),
                       Positioned(
                         right: 0,
-                        bottom: 9,
+                        left: 20,
+                        bottom: 28,
                         child: Container(
                           alignment: Alignment.center,
                           height: 20,

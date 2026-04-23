@@ -1,6 +1,6 @@
 import 'package:finpay_bank/screens/auth/forgot_password_page.dart';
 import 'package:finpay_bank/screens/auth/sign_up_page.dart';
-import 'package:finpay_bank/screens/widgets/sign.dart';
+import 'package:finpay_bank/screens/widgets/sign_page.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {

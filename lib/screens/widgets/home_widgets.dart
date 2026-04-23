@@ -16,15 +16,16 @@ class HomeWidgetsPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
+        color: const Color.fromARGB(255, 241, 240, 240),
       ),
       // height: 100,
       // width: 100,
-      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset(svgAsset),
-          Text(text,textAlign: TextAlign.center,)
-        ]
+          Text(text, textAlign: TextAlign.center),
+        ],
       ),
     );
   }

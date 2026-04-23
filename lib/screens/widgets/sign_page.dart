@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -46,10 +45,12 @@ class PrimaryButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.infinity, 54),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-        backgroundColor: disabled ? Colors.grey : Color.fromRGBO(54, 41, 183, 1),
+        backgroundColor: disabled
+            ? Colors.grey
+            : Color.fromRGBO(54, 41, 183, 1),
       ),
       onPressed: onPressed,
-      
+
       child: Text(
         text,
         style: const TextStyle(

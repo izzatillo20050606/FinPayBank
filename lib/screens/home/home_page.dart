@@ -3,7 +3,8 @@ import 'package:finpay_bank/screens/auth/forgot_password_page.dart';
 import 'package:finpay_bank/screens/auth/sign_in_page.dart';
 import 'package:finpay_bank/screens/auth/sign_up_page.dart';
 import 'package:finpay_bank/screens/home/search_page.dart';
-import 'package:finpay_bank/screens/widgets/battomNavigator.dart';
+import 'package:finpay_bank/screens/search_edit/Interest_page.dart';
+import 'package:finpay_bank/main_page.dart';
 import 'package:finpay_bank/screens/widgets/home_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -190,14 +191,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: CustomBottomNav(
-        currentIndex: myIndex,
-        onTap: (index) {
-          setState(() {
-            myIndex = index;
-          });
-        },
       ),
     );
   }

@@ -5,11 +5,13 @@ class SearchWidgets extends StatelessWidget {
   final String title;
   final String subtitle;
   final String image;
+  final VoidCallback? ontap;
   const SearchWidgets({
     super.key,
     required this.title,
     required this.subtitle,
     required this.image,
+    this.ontap,
   });
 
   @override
@@ -17,7 +19,12 @@ class SearchWidgets extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 14,right: 14,top: 10,bottom: 10),
+          padding: const EdgeInsets.only(
+            left: 14,
+            right: 14,
+            top: 10,
+            bottom: 10,
+          ),
           child: Container(
             height: 66,
             width: double.infinity,
@@ -26,6 +33,7 @@ class SearchWidgets extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
+              onTap: ontap,
               title: Text(
                 title,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),

@@ -52,7 +52,7 @@ class SearchPage extends StatelessWidget {
               ontap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>ExchangePage(currency: '',)),
+                  MaterialPageRoute(builder: (context) =>ExchangePage()),
                 );
               }, 
               title: 'Exchange',

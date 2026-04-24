@@ -32,10 +32,7 @@ class _MainPageState extends State<MainPage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: "Sign In",
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.message),label: "Sign In",),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],
       ),
